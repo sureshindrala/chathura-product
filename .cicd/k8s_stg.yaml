@@ -1,0 +1,34 @@
+# Deployment file for product 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: i27-product-stg
+  labels:
+    app: i27-product-stg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: i27-product-stg
+  template:
+    metadata:
+      labels:
+        app: i27-product-stg
+    spec:
+      containers:
+      - name: i27-product-stg
+        image: DIT # Image tag will be replaced by shared library
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: i27-product-stg
+  labels:
+    app: i27-product-stg
+spec:
+  type: NodePort
+  ports:
+  - port: 8132
+    targetPort: 8132
+  selector:
+    app: i27-product-stg 
