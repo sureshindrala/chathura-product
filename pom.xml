@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.learner</groupId>
-    <artifactId>i27-product</artifactId>
+    <artifactId>chathura-product</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>i27-product</name>
+    <name>chathura-product</name>
     <description>git remote add origin https://github.com/Skandh15/learner-product-api.git</description>
     <properties>
         <java.version>17</java.version>

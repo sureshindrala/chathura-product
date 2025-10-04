@@ -1,6 +1,8 @@
 // Calling the shared library
 
-@Library("com.i27academy.slb@main") _
-k8sPipeline(
-    appName: 'product'
+@Library("com.chathura.slb@main") _ 
+dockerPipeline (
+    appName: 'product',
+    devHostPort: '5232',
+    contPort: '8232'
 )
