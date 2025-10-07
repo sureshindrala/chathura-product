@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/v1 
 kind: Deployment
 metadata:
   name: chathura-product-dev
@@ -14,62 +14,20 @@ spec:
       labels:
         app: chathura-product-dev
     spec:
-      containers:
-      - name: chathura-product-dev
-        image: DIT  # Replace DIT with your docker image
-        ports:
-        - containerPort: 8132  # App listens on 8132
+     containers:
+     - name: chathura-product-dev
+       image: DIT
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: chathura-product-dev
+  name: chathura-product-dev 
   labels:
     app: chathura-product-dev
 spec:
-  type: NodePort
-  ports:
-    - port: 8132         # Service port
-      targetPort: 8132   # Container port
-      nodePort: 30250    # NodePort exposed externally
-  selector:
-    app: chathura-product-dev
-
-
-
-
-
-# apiVersion: apps/v1 
-# kind: Deployment
-# metadata:
-#   name: chathura-product-dev
-#   labels:
-#     app: chathura-product-dev
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: chathura-product-dev
-#   template:
-#     metadata:
-#       labels:
-#         app: chathura-product-dev
-#     spec:
-#      containers:
-#      - name: chathura-product-dev
-#        image: DIT
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: chathura-product-dev 
-#   labels:
-#     app: chathura-product-dev
-# spec:
-#  type: NodePort
-#  ports:
-#  - port: 8132
-#    targetPort: 8132
-#    nodePort: 31312 
-#  selector:
-#   app: chathura-product-dev
+ type: NodePort
+ ports:
+ - port: 8132
+   targetPort: 8132
+ selector:
+  app: chathura-product-dev
