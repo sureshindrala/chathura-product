@@ -11,7 +11,7 @@ COPY ["${JAR_SOURCE}" , "/opt/chathura/"]
 # Change permission to folder
 RUN chmod 777 /opt/chathura
 # Expose port number
-EXPOSE 8232
+EXPOSE 8132
 # Command for run java n
 CMD [ "java" , "-jar" ,"/opt/chathura/chathura-product-0.0.1-SNAPSHOT.jar" ]
 
